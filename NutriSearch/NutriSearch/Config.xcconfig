@@ -1,0 +1,13 @@
+//
+//  Config.xcconfig
+//  NutriSearch
+//
+//  Created by Miguel Solans on 03/03/2025.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SIMPLE_SLASH = /
+
+BASE_API_ENDPOINT = https:$(SIMPLE_SLASH)/nutrisearch.vercel.app
