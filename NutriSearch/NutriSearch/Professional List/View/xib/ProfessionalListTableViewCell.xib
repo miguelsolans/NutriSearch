@@ -46,25 +46,28 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ez-9r-zMd">
-                        <rect key="frame" x="12" y="100" width="432" height="61"/>
-                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PS-1L-v6V">
+                        <rect key="frame" x="12" y="100" width="432" height="55"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="oxE-bl-yaQ" firstAttribute="leading" secondItem="FOs-91-9ap" secondAttribute="trailing" constant="16" id="502-hR-Ec4"/>
-                    <constraint firstAttribute="trailing" secondItem="0Ez-9r-zMd" secondAttribute="trailing" constant="12" id="I1v-te-H3v"/>
                     <constraint firstAttribute="trailing" secondItem="oxE-bl-yaQ" secondAttribute="trailing" constant="12" id="Lz4-wj-kAq"/>
-                    <constraint firstItem="0Ez-9r-zMd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Ves-tb-QEc"/>
                     <constraint firstItem="FOs-91-9ap" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="cYm-Ok-r5f"/>
-                    <constraint firstAttribute="bottom" secondItem="0Ez-9r-zMd" secondAttribute="bottom" constant="10" id="kgq-1l-gdU"/>
-                    <constraint firstItem="0Ez-9r-zMd" firstAttribute="top" secondItem="FOs-91-9ap" secondAttribute="bottom" constant="8" id="lMD-F7-VOw"/>
+                    <constraint firstAttribute="bottom" secondItem="0PS-1L-v6V" secondAttribute="bottom" constant="16" id="eLe-eM-rmB"/>
+                    <constraint firstItem="0PS-1L-v6V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="lgw-57-caZ"/>
                     <constraint firstItem="oxE-bl-yaQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="o3a-wQ-bbJ"/>
+                    <constraint firstItem="0PS-1L-v6V" firstAttribute="top" secondItem="FOs-91-9ap" secondAttribute="bottom" constant="8" id="opl-K4-R0c"/>
                     <constraint firstItem="FOs-91-9ap" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="pRb-9J-kng"/>
+                    <constraint firstAttribute="trailing" secondItem="0PS-1L-v6V" secondAttribute="trailing" constant="12" id="pWP-23-bnU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="expertiseStackView" destination="0Ez-9r-zMd" id="YiM-Ya-jFh"/>
+                <outlet property="expertiseLabel" destination="0PS-1L-v6V" id="ZAT-cI-KSF"/>
                 <outlet property="languageLabel" destination="OLk-XK-Vxm" id="4DH-jP-J96"/>
                 <outlet property="professionalAvatarImageView" destination="FOs-91-9ap" id="gh5-lF-1On"/>
                 <outlet property="professionalNameLabel" destination="iBc-yD-VH0" id="YFc-tR-QhA"/>
