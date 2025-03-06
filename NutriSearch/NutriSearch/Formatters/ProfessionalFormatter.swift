@@ -28,4 +28,39 @@ class ProfessionalFormatter: NSObject {
         
         return attributedString
     }
+    
+    static func formattedExpertises(for professional: ProfessionalOutput) -> NSAttributedString {
+        
+        guard !professional.expertise.isEmpty else {
+            return NSAttributedString()
+        }
+        
+        let whiteAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white
+        ]
+        
+        let grayBackgroundAttributes: [NSAttributedString.Key: Any] = [
+            .backgroundColor: UIColor.gray,
+            .font: UIFont.systemFont(ofSize: STCoreUIFont.ExpertiseSize)
+        ]
+        
+        let clearSpaceAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.clear
+        ]
+        
+        let result = NSMutableAttributedString()
+        
+        for (index, expertise) in professional.expertise.enumerated() {
+            let attributedText = NSMutableAttributedString(string: expertise, attributes: whiteAttributes)
+            attributedText.addAttributes(grayBackgroundAttributes, range: NSRange(location: 0, length: expertise.count))
+            result.append(attributedText)
+            
+            if index < professional.expertise.count - 1 {
+                let space = NSAttributedString(string: " ", attributes: clearSpaceAttributes)
+                result.append(space)
+            }
+        }
+        
+        return result
+    }
 }

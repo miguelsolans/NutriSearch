@@ -20,7 +20,7 @@ class ProfessionalProfileViewModel: NSObject {
         
         let configuration = ApiClientConfiguration();
         
-        guard let baseEndpoint = Bundle.main.object(forInfoDictionaryKey: "BaseEndpoint") as? String
+        guard let baseEndpoint = Bundle.main.object(forInfoDictionaryKey: NConstants.kBaseEndpoint) as? String
         else { fatalError("not found") }
         
         let client = ProfessionalProfileInteractor(baseURL: baseEndpoint, configuration: configuration)

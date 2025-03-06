@@ -169,10 +169,16 @@ extension BaseApiClient {
      * Ideally offline data should be stored using CoreData/SwiftData and not NSUserDefaults, but would require time to setup.
      */
     
+    /// Save JSON string to UserDefaults
+    /// - Parameter jsonString: JSON in String format
+    /// - Parameter endpoint: Endpoint for given JSON response
     fileprivate func saveDataToCache(_ jsonString: String, for endpoint: String) {
         UserDefaults.standard.set(jsonString, forKey: endpoint)
     }
     
+    /// Retrieve a JSON string and parse to Struct
+    /// - Parameter url: URL for service endpoint
+    /// - Parameter completion: Code block for on completion request
     fileprivate func fetchFromCache<T: Decodable>(for url: String, completion: @escaping (Result<T, ApiError>) -> Void) {
         guard let jsonString = UserDefaults.standard.string(forKey: url) else {
             completion(.failure(.noData))

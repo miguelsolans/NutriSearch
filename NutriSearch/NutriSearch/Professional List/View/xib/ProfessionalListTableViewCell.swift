@@ -14,7 +14,7 @@ class ProfessionalListTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
     
-    @IBOutlet weak var expertiseStackView: UIStackView!
+    @IBOutlet weak var expertiseLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,20 +50,8 @@ class ProfessionalListTableViewCell: UITableViewCell {
         self.languageLabel.attributedText = viewModel.formattedLanguagesFor(professional: professional);
         self.languageLabel.font = UIFont.systemFont(ofSize: STCoreUIFont.LanguageSize);
         
-        if(professional.expertise.isEmpty) {
-            return;
-        }
+        self.expertiseLabel.attributedText = ProfessionalFormatter.formattedExpertises(for: professional);
         
-        for expertise in professional.expertise {
-            
-            let label = UILabel();
-            
-            label.font = UIFont.systemFont(ofSize: STCoreUIFont.ExpertiseSize)
-            
-            label.text = expertise;
-            
-            self.expertiseStackView.addArrangedSubview(label);
-        }
         
     }
     
